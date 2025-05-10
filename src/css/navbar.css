@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  width: 100%;
+  background-color: rgb(238, 217, 192);
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  transition: all 300ms;
+  position: relative;
+  padding: 0.5rem 0; /* Added smaller padding */
+}
+.navbar-scrolled {
+  background-color: #f5c75f;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.navbar-link {
+  color: #0f3854;
+  transition: color 300ms;
+  position: relative;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: rgba(15, 56, 84, 0.8);
+}
+
+.navbar-link.active {
+  color: #f5c75f;
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #f5c75f;
+  transition: all 300ms;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+.get-started-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #f5c75f;
+  color: #0f3854;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 56, 84, 0.3);
+  transition: background-color 300ms;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.get-started-button:hover {
+  background-color: #f0bd4a;
+}
+
+.menu-button {
+  padding: 0.5rem;
+  background-color: #0f3854;
+  color: white;
+  border-radius: 9999px;
+  transition: background-color 300ms;
+}
+
+.menu-button:hover {
+  background-color: rgba(15, 56, 84, 0.9);
+}
+
+/* Mobile Menu Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.mobile-menu {
+  @apply bg-[#FFF6E5] border-b border-[#0F3854]/10;
+  animation: slideIn 0.3s ease-out;
+}
+
+.mobile-menu.closing {
+  animation: slideOut 0.3s ease-in;
+}

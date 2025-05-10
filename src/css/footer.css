@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Add any additional custom styles here */

@@ -1,0 +1,291 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f3854;
+  background-color: bisque;
+}
+
+.climaxica-container {
+  min-height: 100vh;
+
+  background-color: bisque;
+}
+
+/* Header styles */
+.climaxica-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  border-bottom: 1px solid rgba(15, 56, 84, 0.2);
+}
+
+.climaxica-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(15, 56, 84, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.climaxica-logo span {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #0f3854;
+}
+
+.climaxica-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.get-started-button {
+  background-color: #f5c75f;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 56, 84, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.get-started-button:hover {
+  background-color: #f0bd4a;
+}
+
+.menu-button {
+  background-color: #0f3854;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 56, 84, 0.5);
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  background-color: #fff6e5;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(15, 56, 84, 0.2);
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(15, 56, 84, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: -50px;
+  gap: 2rem;
+  border: 1px solid rgba(15, 56, 84, 0.1);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  height: 300px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #0f3854;
+  border-left: 4px solid #0f3854;
+  padding-left: 1rem;
+}
+
+.hero-text .highlight {
+  background-color: #5ed45a;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(15, 56, 84, 0.2);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: #0f3854;
+}
+
+.welcome-text {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(15, 56, 84, 0.2);
+  padding-left: 1.5rem;
+}
+
+.welcome-text p {
+  font-size: 1.125rem;
+  color: #0f3854;
+}
+
+/* Navigation Numbers */
+.nav-numbers {
+  background-color: #f5c75f;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(15, 56, 84, 0.3);
+  border-bottom: 1px solid rgba(15, 56, 84, 0.3);
+}
+
+.nav-numbers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+.numbers-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  border-bottom: 1px solid rgba(15, 56, 84, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.numbers-row div {
+  font-weight: bold;
+  color: #0f3854;
+}
+
+.nav-items-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.nav-items-row div {
+  color: #0f3854;
+}
+
+/* Background Image with Parallax */
+.background-image {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://images.pexels.com/photos/1483880/pexels-photo-1483880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Add overlay for better visibility */
+.background-image::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .nav-items-row {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .get-started-button span {
+    display: none;
+  }
+
+  .get-started-button::after {
+    content: "→";
+    font-size: 1.25rem;
+  }
+
+  .background-image {
+    height: 70vh; /* Smaller height on mobile */
+  }
+
+  @keyframes parallaxScroll {
+    0% {
+      transform: translateY(0) scale(1.05);
+    }
+    100% {
+      transform: translateY(-5%) scale(1);
+    }
+  }
+}
+
+/* Slide-in Animation */
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(
+      50px
+    ); /* Reduced from 100px to 50px for subtler movement */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px); /* Initial state before animation */
+  visibility: hidden; /* Hide elements before they enter viewport */
+  animation: slideInFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: transform, opacity; /* Optimize animation performance */
+}
+
+/* Adjusted timing for smoother sequence */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 150ms;
+}
+.delay-300 {
+  animation-delay: 200ms;
+}
+.delay-400 {
+  animation-delay: 250ms;
+}
+.delay-500 {
+  animation-delay: 300ms;
+}
+
+/* Add this class when element enters viewport */
+.slide-in.active {
+  visibility: visible;
+}

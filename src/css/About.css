@@ -1,0 +1,203 @@
+.about-container {
+  background-color: bisque;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: #0f3854;
+}
+
+.header h1 {
+  color: #0f3854;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  background-color: #5cff5c;
+  padding: 0.2rem 0.5rem;
+}
+
+.divider {
+  border-top: 2px solid #ffd700;
+  margin: 1rem 0;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.vision-column,
+.mission-column {
+  flex: 1;
+  padding: 1rem;
+}
+
+.vision-column {
+  border-right: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.section-title {
+  color: #003366;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-content {
+  margin-top: 3rem;
+}
+
+.section-content p {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #0f3854; /* Added explicit text color */
+}
+
+.vision-image {
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vision-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mission-visual {
+  position: relative;
+  margin-top: 3rem;
+  height: 300px;
+}
+
+.globe-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #7fdbff, #39cccc, #3d9970);
+  margin: 0 auto;
+}
+
+.notification {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notification-badge {
+  background-color: #ff4136;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.notification-content {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  color: #0f3854; /* Added explicit text color */
+}
+
+.close-icon {
+  background-color: #ff851b;
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: none;
+}
+
+.top-notification {
+  top: 0;
+  right: 0;
+}
+
+.bottom-notification {
+  bottom: 50px;
+  left: 0;
+}
+
+.footer {
+  text-align: right;
+  color: #0f3854; /* Updated from #AAAAAA to brand color */
+  margin-top: 1rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  .vision-column {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding-bottom: 2rem;
+  }
+
+  .notification {
+    position: relative;
+    margin: 1rem 0;
+  }
+
+  .top-notification,
+  .bottom-notification {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .mission-visual {
+    height: auto;
+  }
+}
+
+/* Add animation keyframes */
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(100px);
+  visibility: hidden;
+}
+
+.slide-in.active {
+  animation: slideInFromBottom 1.5s ease-out forwards; /* Changed from 0.8s to 1.5s */
+  visibility: visible;
+}
+
+/* Update delay classes for smoother transitions */
+.delay-100 {
+  animation-delay: 200ms;
+}
+.delay-200 {
+  animation-delay: 400ms;
+}
+.delay-300 {
+  animation-delay: 600ms;
+}
+.delay-400 {
+  animation-delay: 800ms;
+}
+.delay-500 {
+  animation-delay: 1000ms;
+}

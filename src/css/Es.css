@@ -1,0 +1,53 @@
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  animation: slideInFromTop 1.5s ease-out forwards;
+}
+
+/* Update delay classes */
+.delay-100 {
+  animation-delay: 200ms;
+}
+
+.delay-200 {
+  animation-delay: 400ms;
+}
+
+.delay-300 {
+  animation-delay: 600ms;
+}
+
+.delay-400 {
+  animation-delay: 800ms;
+}
+
+.delay-500 {
+  animation-delay: 1000ms;
+}
+
+@media (max-width: 768px) {
+  .slide-in {
+    animation-duration: 1.2s;
+  }
+}
