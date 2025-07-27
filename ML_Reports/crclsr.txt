@@ -1,0 +1,51 @@
+Classification Report:
+               precision    recall  f1-score   support
+
+    Arecanut       1.00      1.00      1.00       252
+      Barley       0.74      0.67      0.70       252
+        Bean       0.76      0.73      0.75       252
+     Dagussa       0.87      0.96      0.92       252
+      Fallow       0.88      0.95      0.91       252
+   Groundnut       1.00      1.00      1.00       252
+   Jackfruit       1.00      1.00      1.00       252
+       Maize       0.66      0.57      0.61       252
+  Niger seed       0.82      0.92      0.86       252
+         Pea       0.88      0.89      0.89       252
+      Potato       0.91      0.94      0.93       252
+  Red Pepper       0.94      0.98      0.96       252
+     Sorghum       0.86      0.94      0.90       252
+   Soyabeans       0.59      0.60      0.60       252
+   Sugarcane       1.00      1.00      1.00       252
+        Teff       0.64      0.57      0.60       252
+       Wheat       0.61      0.54      0.57       252
+       apple       1.00      1.00      1.00       252
+      banana       1.00      1.00      1.00       252
+       beans       0.11      0.10      0.11       252
+   blackgram       1.00      1.00      1.00       252
+    chickpea       0.60      0.59      0.59       252
+     coconut       1.00      1.00      1.00       252
+      coffee       1.00      1.00      1.00       252
+      cotton       1.00      1.00      1.00       252
+     cowpeas       0.57      0.53      0.55       252
+      grapes       1.00      1.00      1.00       252
+  groundnuts       0.22      0.21      0.21       252
+        jute       1.00      1.00      1.00       252
+ kidneybeans       0.18      0.19      0.19       252
+      lentil       1.00      1.00      1.00       252
+       maize       1.00      1.00      1.00       252
+       mango       1.00      1.00      1.00       252
+   mothbeans       0.25      0.27      0.26       252
+    mungbean       0.56      0.60      0.58       252
+   muskmelon       1.00      1.00      1.00       252
+      orange       1.00      1.00      1.00       252
+      papaya       1.00      1.00      1.00       252
+        peas       0.20      0.21      0.20       252
+  pigeonpeas       0.17      0.16      0.16       252
+ pomegranate       1.00      1.00      1.00       252
+        rice       1.00      1.00      1.00       252
+  watermelon       1.00      1.00      1.00       252
+
+    accuracy                           0.79     10836
+   macro avg       0.79      0.79      0.79     10836
+weighted avg       0.79      0.79      0.79     10836
+iAPh&5kSJbhhcuY

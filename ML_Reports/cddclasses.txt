@@ -1,0 +1,59 @@
+Class 0: Apple Black rot
+Class 1: Apple Healthy
+Class 2: Apple Scab
+Class 3: Bell pepper Bacterial spot
+Class 4: Bell pepper Healthy
+Class 5: Cedar apple rust
+Class 6: Citrus Black spot
+Class 7: Citrus Healthy
+Class 8: Citrus canker
+Class 9: Citrus greening
+Class 10: Corn Common rust
+Class 11: Corn Gray leaf spot
+Class 12: Corn Healthy
+Class 13: Corn Northern Leaf Blight
+Class 14: Grape Black Measles
+Class 15: Grape Black rot
+Class 16: Grape Healthy
+Class 17: Grape Isariopsis Leaf Spot
+Class 18: Peach Bacterial spot
+Class 19: Peach Healthy
+Class 20: Potato Early blight
+Class 21: Potato Healthy
+Class 22: Potato Late blight
+Class 23: Tomato Bacterial spot
+Class 24: Tomato Early blight
+Class 25: Tomato Healthy
+Class 26: Tomato Late blight
+Class 27: Tomato Leaf Mold
+Class 28: Tomato Mosaic virus
+Class 29: Tomato Septoria leaf spot
+Class 30: Tomato Spider mites
+Class 31: Tomato Target Spot
+Class 32: Tomato Yellow Leaf Curl Virus
+
+CNN Model Architecture
++----------------------+------------------+------------+--------------------------------+
+| Layer Type          | Output Shape     | Parameters | Notes                         |
++----------------------+------------------+------------+--------------------------------+
+| Input               | (128, 128, 3)    | 0          | RGB image                     |
+| Conv2D              | (128, 128, 16)   | 448        | 16 filters, 3x3              |
+| BatchNorm           | (128, 128, 16)   | 64         | -                            |
+| MaxPooling2D        | (64, 64, 16)     | 0          | -                            |
+| Conv2D              | (64, 64, 32)     | 4640       | 32 filters, 3x3              |
+| CBAM Block          | (64, 64, 32)     | ~3K        | Channel + Spatial Attention  |
+|  ├─GlobalAvgPool2D  | (32)             | 0          | For channel attention        |
+|  ├─GlobalMaxPool2D  | (32)             | 0          | For channel attention        |
+|  ├─Dense(↓channels) | (4)              | 132        | 32 → 4                       |
+|  ├─Dense(↑channels) | (32)             | 160        | 4 → 32                       |
+|  ├─Conv2D(spatial)  | (64, 64, 1)      | 1009       | 7×7 kernel                   |
+| BatchNorm           | (64, 64, 32)     | 128        | -                            |
+| MaxPooling2D        | (32, 32, 32)     | 0          | -                            |
+| Conv2D              | (32, 32, 64)     | 18496      | 64 filters, 3x3              |
+| BatchNorm           | (32, 32, 64)     | 256        | -                            |
+| GlobalAvgPool2D     | (64)             | 0          | -                            |
+| Dropout(0.4)        | (64)             | 0          | Regularization               |
+| Dense               | (64)             | 4160       | Fully connected layer        |
+| Dense (Output)      | (num_classes)    | #          | Softmax classifier           |
++----------------------+------------------+------------+--------------------------------+
+Total trainable parameters: ~29K
